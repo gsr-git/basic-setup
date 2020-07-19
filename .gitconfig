@@ -1,0 +1,9 @@
+[user]
+	email = gsramdasi@gmail.com
+	name = gsr-git
+[alias]
+	br = branch
+	co = checkout
+	st = status
+	ci = commit
+	cbr = !git branch | grep "^* " | awk '{print $2}'
