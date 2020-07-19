@@ -1,0 +1,15 @@
+set -o vi
+PROMPT_COMMAND=__prompt_command
+
+__prompt_command() {
+	RETCODE=$?
+	DIR=$(basename $(pwd))
+
+	if [ -z $VIRTUAL_ENV ]; then
+		PS1="[ $RETCODE $DIR ] $ "
+	else
+		PS1="($VIRTUAL_ENV) [ $RETCODE $DIR ] $ "
+	fi
+}
+
+alias activate='source ./bin/activate'
