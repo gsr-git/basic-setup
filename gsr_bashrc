@@ -1,4 +1,5 @@
 set -o vi
+
 PROMPT_COMMAND=__prompt_command
 
 __prompt_command() {
@@ -12,4 +13,9 @@ __prompt_command() {
 	fi
 }
 
-alias activate='source ./bin/activate'
+alias activate="source ./bin/activate"
+alias p="ps -ef | grep $@"
+alias v="vim -c \"cope | wincmd t | vsp\" ."
+alias kssh='ssh-keygen -R'
+
+setxkbmap -option ctrl:nocaps
